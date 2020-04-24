@@ -10,7 +10,17 @@ namespace ReverseString
     {
         public string Reverse(string s)
         {
-            throw new NotImplementedException();
+            char[] inputToCharacters = s.ToCharArray();
+            var totalCharacters = inputToCharacters.Length;
+            var reversedList = new List<char>();
+
+            for (var i = 1 ; i <= totalCharacters; i++)
+            {
+                var lastChar = totalCharacters - i;
+                reversedList.Add(inputToCharacters[lastChar]);
+            }
+
+            return new string(reversedList.ToArray());
         }
     }
 }
